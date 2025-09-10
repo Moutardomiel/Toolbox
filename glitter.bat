@@ -1,2 +1,4 @@
 @echo off
-powershell -ExecutionPolicy Bypass -File "%~dp0glitter.ps1" %*
+pushd "%~dp0"
+powershell -ExecutionPolicy Bypass -File ".\glitter.ps1" %*
+popd

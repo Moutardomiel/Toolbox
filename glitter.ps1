@@ -22,4 +22,7 @@ elseif ($args[0] -eq "add") {
         git commit -m $args[1]
         git push
     }
+} else {
+    echo "Error: No arguments provided. Use --help for usage."
+    exit 1
 }
