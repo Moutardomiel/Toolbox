@@ -7,5 +7,5 @@
 
 ### Linux
 - Each time you pull a version, do this : 
-    - sudo cp ~/scripts/glitter.sh /usr/local/bin/glitter
-    - sudo chmod +x /usr/local/bin/glitter
+    - sudo cp ~/scripts/[filename].sh /usr/local/bin/[filename]
+    - sudo chmod +x /usr/local/bin/[filename]
