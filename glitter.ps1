@@ -22,7 +22,17 @@ elseif ($args[0] -eq "add") {
         git commit -m $args[1]
         git push
     }
-} else {
+}
+elseif ($args[0] -eq "switch") {
+    if ($args[1] -eq "--help") {
+        echo "Usage -- glitter switch (branch_name)"
+        echo "This command pull all changes and switch your current branch to the targeted one"
+        echo "This will not commit changes, please use the add command to push changes before switching."
+    } else {
+        
+    }
+} 
+else {
     echo "Error: No arguments provided. Use --help for usage."
     exit 1
 }

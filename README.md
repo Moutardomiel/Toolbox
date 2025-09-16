@@ -1,4 +1,8 @@
 # Toolbox
+0.1
+
+## Addition
+**Please change version for minor or majog depending on changes.**
 
 ## Optimal Usage
 ### Windows
