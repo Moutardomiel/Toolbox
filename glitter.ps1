@@ -29,7 +29,9 @@ elseif ($args[0] -eq "switch") {
         echo "This command pull all changes and switch your current branch to the targeted one"
         echo "This will not commit changes, please use the add command to push changes before switching."
     } else {
-        
+        git fetch --all
+        git pull
+        git checkout $args[1]
     }
 } 
 else {

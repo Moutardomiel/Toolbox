@@ -7,11 +7,12 @@ if [ "$1" == "--help" ]; then
 
 elif [ "$1" == "merge" ]; then
     if [ "$2" == "--help" ] || [ -z "$2" ]; then
-        echo "Usage -- glitter merge (branch_to_merge_in)"
+        echo "Usage -- glitter merge (branch_name)"
         echo "Warning -- This does not fix merge conflicts. You need to fix them yourself."
         echo "This fetches, pulls the current, and merges the target selected branch. You will need to use 'add' to commit the merge."
     else
         git fetch --all
+        git pull
         git merge "$2"
     fi
 
@@ -23,6 +24,18 @@ elif [ "$1" == "add" ]; then
         git add --all
         git commit -m "$2"
         git push
+    fi
+
+elif [ "$1" == "switch" ]; then
+    if [ "$2" == "--help" ] || [ -z "$2" ];
+    then
+        echo "Usage -- glitter switch (branch_name)"
+        echo "This command pulls all changes and switches your current branch to the targeted one"
+        echo "This will not commit changes, please use the add command to push changes before switching."
+    else
+        git fetch --all
+        git pull
+        git checkout "$2"
     fi
 
 else
