@@ -37,7 +37,6 @@ elif [ "$1" == "switch" ]; then
         git pull
         git checkout "$2"
     fi
-
 else
     echo "Error: Unknown command '$1'. Use --help for usage."
 fi
