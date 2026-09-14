@@ -1,7 +1,7 @@
 if ($args[0] -eq "--help") {
     echo "Glitter is a git automatic tools doing multiple complex git actions to facilitate branch work."
     echo "Author -- MoutardOMiel"
-    echo "Usage -- glitter [merge|add] (Args)"
+    echo "Usage -- glitter [merge|add|switch] (Args)"
 }
 elseif ($args[0] -eq "merge") {
     if ($args[1] -eq "--help") {
