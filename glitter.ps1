@@ -15,11 +15,17 @@ elseif ($args[0] -eq "merge") {
 }
 elseif ($args[0] -eq "add") {
     if ($args[1] -eq "--help") {
-        echo "Usage -- glitter add (message)"
+        echo "Usage -- glitter add [--bug|--fix|--feature] (message)"
         echo "This commit the current changes (stashed include), and push on the current branch"
+        echo "--bug, --fix and --feature prefix the commit message with bug:, fix: or feature:"
     } else {
+        $commitMessage = $args[1]
+        if ($args[1] -in @("--bug", "--fix", "--feature")) {
+            $prefix = $args[1].Substring(2)
+            $commitMessage = "${prefix}: $($args[2])"
+        }
         git add --all
-        git commit -m $args[1]
+        git commit -m $commitMessage
         git push
     }
 }
